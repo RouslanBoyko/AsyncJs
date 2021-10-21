@@ -8,17 +8,21 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
+// Steps :
+// 1. read the Fetch documentation
+// 2. you must convert the response in a json format
+// 3. display the response in the console
+// NB: here we use an async await function, you can convert it
+//     in a Promise or callbacks functions if you prefer
+(() =>
+{
+    document.querySelector("#run").addEventListener("click", async () =>
+    {
+        const response = await fetch ("http://localhost:3000/heroes")
+        const data = await response.json()
+        console.log(data)
 
-(() => {
-    document.querySelector("#run").addEventListener("click", async () => {
-        const response = await fetch("http://localhost:3000/heroes");
-
-        // Steps :
-        // 1. read the Fetch documentation
-        // 2. you must convert the response in a json format
-        // 3. display the response in the console
-        // NB: here we use an async await function, you can convert it 
-        //     in a Promise or callbacks functions if you prefer 
-        
+           // .then(res => res.json())
+           // .then(data => (console.log(data)))
     });
 })();

@@ -8,7 +8,15 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
-
-(() => {
-    // your code here
+(() =>
+{
+    document.querySelector("#run").addEventListener("click", async() =>
+    {
+        const heroId = document.querySelector("#hero-id").value;
+        const result = await fetch(`http://localhost:3000/heroes/${heroId}`,
+            {
+            method: 'DELETE',
+        });
+        console.log(result);
+    })
 })();
